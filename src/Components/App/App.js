@@ -25,11 +25,15 @@ function App() {
   }, []);
 
   const filteredUsers = users.filter((user) => {
-    return user.email.toLowerCase().includes(searchTerm.toLowerCase());
+    return (
+      user.email && user.email.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   });
 
   const sortedUsers = filteredUsers.sort((a, b) => {
-    return a.email.toLowerCase().localeCompare(b.email.toLowerCase());
+    const emailA = a.email ? a.email.toLowerCase() : "";
+    const emailB = b.email ? b.email.toLowerCase() : "";
+    return emailA.localeCompare(emailB);
   });
 
   return (
@@ -50,7 +54,6 @@ function App() {
       <UsersTable sortedUsers={sortedUsers} searchTerm={searchTerm} />
     </div>
   );
-
 }
 
 export default App;
