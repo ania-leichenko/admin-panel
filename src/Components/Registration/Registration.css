@@ -1,3 +1,13 @@
 .container {
   margin-top: 30px;
 }
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn{
+  margin: 6px;
+}

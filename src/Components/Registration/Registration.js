@@ -109,6 +109,10 @@ function Registration() {
     return !isNaN(Date.parse(dateOfBirth));
   }
 
+  function onClickBackBtn(e) {
+    navigate("/");
+  }
+
   return (
     <Container className="container">
       <Row className="justify-content-md-center">
@@ -184,18 +188,14 @@ function Registration() {
                 {errors.dateOfBirth}
               </Form.Control.Feedback>
             </Form.Group>
-            <Row>
-              <Col md={{ span: 10, offset: 10 }}>
-                <Button
-                  variant="primary"
-                  type="submit"
-                  onClick={onClickAddBtn}
-                  className="add-btn"
-                >
-                  Add
-                </Button>
-              </Col>
-            </Row>
+            <div className="buttons">
+              <Button variant="primary" type="back" onClick={onClickBackBtn} className="back-btn">
+                Back
+              </Button>
+              <Button variant="primary" type="submit" onClick={onClickAddBtn}>
+                Add
+              </Button>
+            </div>
           </Form>
         </Col>
         <Col sm></Col>

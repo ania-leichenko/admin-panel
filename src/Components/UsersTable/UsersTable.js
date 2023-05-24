@@ -104,7 +104,7 @@ function UsersTable({ sortedUsers, searchTerm }) {
                 </td>
                 <td>
                   <Form.Control
-                    value={user.phone}
+                    value={"+380" + user.phone}
                     onChange={(e) => handleInputChange(e, user.id, "phone")}
                   />
                 </td>
